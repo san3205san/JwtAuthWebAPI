@@ -22,14 +22,14 @@ namespace JWTBearerAuth
         {
             Configuration = configuration;
         }
-
+        readonly string MyAllowSpecificOrigin = "_myAllowSpecificOrigins";
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(options => {
-                options.AddPolicy("CorsPolicy", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials().Build());
+                options.AddPolicy("_myAllowSpecificOrigins", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
                 });
 
             services.AddControllers();
@@ -60,7 +60,7 @@ namespace JWTBearerAuth
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(MyAllowSpecificOrigin);
             app.UseHttpsRedirection();
 
             app.UseRouting();

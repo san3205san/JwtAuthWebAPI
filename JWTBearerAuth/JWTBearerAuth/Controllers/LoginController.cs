@@ -49,6 +49,7 @@ namespace JWTBearerAuth.Controllers
         private UserModel AuthenticateUser(UserModel login)
         {
             UserModel user = null;
+            if(login.Username!=null&&login.Password!=null)
              user = UserList.SingleOrDefault(x => x.Username.ToUpper() == login.Username.ToUpper() && x.Password==login.Password);
             if (user!=null)
             {

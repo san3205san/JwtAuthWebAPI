@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<script src="~/js/jquery-3.5.1.slim.min.js"></script>
+<script src="~/js/login.js"></script>
+<div class="text-center">
+
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Login Form -->
+            <!--<form>-->
+            <input type="text" id="loginuser" class="fadeIn second" name="login" placeholder="login">
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+            <input type="button" class="fadeIn fourth" value="Log In" onclick="login()">
+            @*</form>*@
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <table class="table table-bordered" id="tableForcast">
+        <tr>
+            <th>date</th>
+            <th>temperatureC</th>
+            <th>temperatureF</th>
+            <th>summary</th>
+        </tr>
+    </table>
+</div>
+
+
+
+<script>
+
+    $(document).ready(function () {
+        getAll();
+    });
+</script>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\JWTBearerAuth\\JWTBearerAuth\\JWTBearerAuth.csproj": {}
+    "C:\\Users\\santhoshkumar.a\\Documents\\GitHub\\JwtAuthWebAPI\\JWTBearerAuth\\JWTBearerAuth\\JWTBearerAuth.csproj": {}
   },
   "projects": {
-    "D:\\JWTBearerAuth\\JWTBearerAuth\\JWTBearerAuth.csproj": {
+    "C:\\Users\\santhoshkumar.a\\Documents\\GitHub\\JwtAuthWebAPI\\JWTBearerAuth\\JWTBearerAuth\\JWTBearerAuth.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\JWTBearerAuth\\JWTBearerAuth\\JWTBearerAuth.csproj",
+        "projectUniqueName": "C:\\Users\\santhoshkumar.a\\Documents\\GitHub\\JwtAuthWebAPI\\JWTBearerAuth\\JWTBearerAuth\\JWTBearerAuth.csproj",
         "projectName": "JWTBearerAuth",
-        "projectPath": "D:\\JWTBearerAuth\\JWTBearerAuth\\JWTBearerAuth.csproj",
+        "projectPath": "C:\\Users\\santhoshkumar.a\\Documents\\GitHub\\JwtAuthWebAPI\\JWTBearerAuth\\JWTBearerAuth\\JWTBearerAuth.csproj",
         "packagesPath": "C:\\Users\\santhoshkumar.a\\.nuget\\packages\\",
-        "outputPath": "D:\\JWTBearerAuth\\JWTBearerAuth\\obj\\",
+        "outputPath": "C:\\Users\\santhoshkumar.a\\Documents\\GitHub\\JwtAuthWebAPI\\JWTBearerAuth\\JWTBearerAuth\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\santhoshkumar.a\\AppData\\Roaming\\NuGet\\NuGet.Config",
