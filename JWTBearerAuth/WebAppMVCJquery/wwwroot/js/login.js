@@ -3,22 +3,48 @@
 
     var user = $("#loginuser").val();
     var pwd = $("#password").val();
-    var url = API_DEV_ENV.toString()+"api/login?username=" + user + "&pass=" + pwd
+    var url = API_DEV_ENV.toString() + "api/login";
+
+
+    var login = { Username: user, Password: pwd };
+
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: url,
+        data: JSON.stringify(login),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
         success: function (data) {
-            debugger;
+            alert("login successfully");
             localStorage.setItem("token", data.token);
-            console.log("token=" + data.token);
+           console.log("token=" + data.token);
             window.location.replace("/Home/Privacy");
         },
-        error: function (error) {
+            error: function (error) {
             debugger;
             console.log(error);
         },
-        dataType: "json",
     });
+
+   
+
+    //$.ajax({
+    //    type: "GET",
+    //    url: url,
+    //    success: function (data) {
+    //        debugger;
+    //        localStorage.setItem("token", data.token);
+    //        console.log("token=" + data.token);
+    //        window.location.replace("/Home/Privacy");
+    //    },
+    //    error: function (error) {
+    //        debugger;
+    //        console.log(error);
+    //    },
+    //    dataType: "json",
+    //});
 
 
 

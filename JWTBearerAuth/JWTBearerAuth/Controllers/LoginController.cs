@@ -25,12 +25,12 @@ namespace JWTBearerAuth.Controllers
             _config = config;
         }
 
-        [HttpGet]
-        public IActionResult Login(string username, string pass)
+        [HttpPost]
+        public IActionResult Login(UserModel login)
         {
-            UserModel login = new UserModel();
-            login.Username = username;
-            login.Password = pass;
+            //UserModel login = new UserModel();
+            //login.Username = usermodel.Username;
+            //login.Password = usermodel.Password;
             IActionResult response = Unauthorized();
 
             var user = AuthenticateUser(login);
@@ -63,12 +63,13 @@ namespace JWTBearerAuth.Controllers
         {
             var securitykey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securitykey, SecurityAlgorithms.HmacSha256);
-
+            var roles = "Admin";
 
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub,userinfo.Username),
                 new Claim(JwtRegisteredClaimNames.Email,userinfo.EmailAddress),
+                new Claim("Roles",roles),
                 new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString())
             };
 
