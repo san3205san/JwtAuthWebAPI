@@ -49,18 +49,17 @@
             var dataSource = new kendo.data.DataSource({
                 transport: {
                     read: function (e) {
+
+                        
                         // On success.
-                        e.success(sampleData);
+                        e.success(fetch());
                         // On failure.
                         //e.error("XHR response", "status code", "error message");
                     },
                     create: function (e) {
-                        // Assign an ID to the new item.
-                        e.data.ProductID = sampleDataNextID++;
-                        // Save data item to the original datasource.
-                        sampleData.push(e.data);
-                        // On success.
-                        e.success(e.data);
+
+                        addDB(e);
+                      
                         // On failure.
                         //e.error("XHR response", "status code", "error message");
                     },
@@ -102,6 +101,19 @@
                 }
             });
 
+            function fetch() {
+                return sampleData;
+            }
+
+            function addDB(e) {
+                // Assign an ID to the new item.
+                e.data.ProductID = sampleDataNextID++;
+                // Save data item to the original datasource.
+                sampleData.push(e.data);
+                // On success.
+                e.success(e.data);
+            }
+
             $("#grid").kendoGrid({
                 dataSource: dataSource,
                 pageable: true,
@@ -114,7 +126,7 @@
                     { field: "Discontinued", width: "120px" },
                     { command: ["edit", "destroy"], title: "&nbsp;", width: "200px" }
                 ],
-                editable: "inline"
+                editable: "popup"
             });
         });
     </script>
